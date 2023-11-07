@@ -1,24 +1,121 @@
 <Sysmon schemaversion="4.23">
     <EventFiltering>
-        <!-- Sysmon Configuration Change -->
-        <ConfigChange onmatch="include">
-            <EventID condition="is">16</EventID>
-        </ConfigChange>
+        <ProcessCreate onmatch="include">
+            <EventID condition="is">1</EventID>
+        </ProcessCreate>
 
-        <!-- Sysmon Blocked Executable -->
+        <!-- FileCreateTime -->
+        <FileCreateTime onmatch="include">
+            <EventID condition="is">2</EventID>
+        </FileCreateTime>
+
+        <!-- NetworkConnect -->
+        <NetworkConnect onmatch="include">
+            <EventID condition="is">3</EventID>
+        </NetworkConnect>
+
+        <!-- ProcessTerminate -->
+        <ProcessTerminate onmatch="include">
+            <EventID condition="is">5</EventID>
+        </ProcessTerminate>
+
+        <!-- DriverLoad -->
+        <DriverLoad onmatch="include">
+            <EventID condition="is">6</EventID>
+        </DriverLoad>
+
+        <!-- ImageLoad -->
+        <ImageLoad onmatch="include">
+            <EventID condition="is">7</EventID>
+        </ImageLoad>
+
+        <!-- CreateRemoteThread -->
+        <CreateRemoteThread onmatch="include">
+            <EventID condition="is">8</EventID>
+        </CreateRemoteThread>
+
+        <!-- RawAccessRead -->
+        <RawAccessRead onmatch="include">
+            <EventID condition="is">9</EventID>
+        </RawAccessRead>
+
+        <!-- ProcessAccess -->
+        <ProcessAccess onmatch="include">
+            <EventID condition="is">10</EventID>
+        </ProcessAccess>
+
+        <!-- FileCreate -->
         <FileCreate onmatch="include">
-            <EventID condition="is">27</EventID>
+            <EventID condition="is">11</EventID>
         </FileCreate>
 
-        <!-- Sysmon Blocked File Shredding -->
+        <!-- RegistryEvent -->
+        <RegistryEvent onmatch="include">
+            <EventID condition="is">12</EventID>
+            <EventID condition="is">13</EventID>
+            <EventID condition="is">14</EventID>
+        </RegistryEvent>
+
+        <!-- FileCreateStreamHash -->
+        <FileCreateStreamHash onmatch="include">
+            <EventID condition="is">15</EventID>
+        </FileCreateStreamHash>
+
+        <!-- PipeEvent -->
+        <PipeEvent onmatch="include">
+            <EventID condition="is">17</EventID>
+            <EventID condition="is">18</EventID>
+        </PipeEvent>
+
+        <!-- WmiEvent -->
+        <WmiEvent onmatch="include">
+            <EventID condition="is">19</EventID>
+            <EventID condition="is">20</EventID>
+            <EventID condition="is">21</EventID>
+        </WmiEvent>
+
+        <!-- DNSQuery -->
+        <DNSQuery onmatch="include">
+            <EventID condition="is">22</EventID>
+        </DNSQuery>
+
+        <!-- FileDelete -->
         <FileDelete onmatch="include">
-            <EventID condition="is">28</EventID>
+            <EventID condition="is">23</EventID>
         </FileDelete>
 
-        <!-- Sysmon File Executable Creation Detected -->
-        <FileCreate onmatch="include">
+        <!-- ClipboardChange -->
+        <ClipboardChange onmatch="include">
+            <EventID condition="is">24</EventID>
+        </ClipboardChange>
+
+        <!-- ProcessTampering -->
+        <ProcessTampering onmatch="include">
+            <EventID condition="is">25</EventID>
+        </ProcessTampering>
+
+        <!-- FileDeleteDetected -->
+        <FileDeleteDetected onmatch="include">
+            <EventID condition="is">26</EventID>
+        </FileDeleteDetected>
+
+        <!-- FileBlockExecutable -->
+        <FileBlockExecutable onmatch="include">
+            <EventID condition="is">27</EventID>
+        </FileBlockExecutable>
+
+        <!-- FileBlockShredding -->
+        <FileBlockShredding onmatch="include">
+            <EventID condition="is">28</EventID>
+        </FileBlockShredding>
+
+        <!-- FileExecutableDetected -->
+        <FileExecutableDetected onmatch="include">
             <EventID condition="is">29</EventID>
-        </FileCreate>
+        </FileExecutableDetected>
+
+
+        
         <SysmonError onmatch="include">
             <!-- Include specific error messages indicating potential tampering -->
             <Description condition="contains">Failed to open service configuration with error</Description>
