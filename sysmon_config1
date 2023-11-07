@@ -1,0 +1,38 @@
+<Sysmon schemaversion="4.23">
+    <EventFiltering>
+        <!-- Sysmon Configuration Change -->
+        <ConfigChange onmatch="include">
+            <EventID condition="is">16</EventID>
+        </ConfigChange>
+
+        <!-- Sysmon Blocked Executable -->
+        <FileCreate onmatch="include">
+            <EventID condition="is">27</EventID>
+        </FileCreate>
+
+        <!-- Sysmon Blocked File Shredding -->
+        <FileDelete onmatch="include">
+            <EventID condition="is">28</EventID>
+        </FileDelete>
+
+        <!-- Sysmon File Executable Creation Detected -->
+        <FileCreate onmatch="include">
+            <EventID condition="is">29</EventID>
+        </FileCreate>
+        <SysmonError onmatch="include">
+            <!-- Include specific error messages indicating potential tampering -->
+            <Description condition="contains">Failed to open service configuration with error</Description>
+            <Description condition="contains">Failed to connect to the driver to update configuration</Description>
+            <!-- Exclude generic English language errors or specific error codes that are known false positives -->
+            <Description condition="excludes">The media is write protected.</Description>
+            <Description condition="excludes">Failed to open service configuration with error 19</Description>
+            <Description condition="excludes">Failed to open service configuration with error 93</Description>
+        </SysmonError>
+
+    </EventFiltering>
+</Sysmon>
+
+
+
+
+
