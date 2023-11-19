@@ -1,7 +1,66 @@
 <Sysmon schemaversion="4.0">
     <EventFiltering>
-        <RegistryEvent onmatch="include">
-            <TargetObject condition="begin with">HKLM\System\CurrentControlSet\services\WinDefend</TargetObject>
+        <ProcessCreate onmatch="include">
+        </ProcessCreate>
+
+        <FileCreateTime onmatch="include">    
+        </FileCreateTime>
+        
+        <NetworkConnect onmatch="include">    
+        </NetworkConnect>
+
+        <ProcessTerminate onmatch="include">    
+        </ProcessTerminate>
+
+        <DriverLoad onmatch="include">    
+        </DriverLoad>
+
+        <ImageLoad onmatch="include">    
+        </ImageLoad>
+
+        <CreateRemoteThread onmatch="include">    
+        </CreateRemoteThread>
+
+        <RawAccessRead onmatch="include">    
+        </RawAccessRead>
+
+        <ProcessAccess onmatch="include">    
+        </ProcessAccess>
+
+        <FileCreate onmatch="include">    
+        </FileCreate>
+
+        <RegistryEvent onmatch="include">    
         </RegistryEvent>
+
+        <FileCreateStreamHash onmatch="include">    
+        </FileCreateStreamHash>
+
+        <PipeEvent onmatch="include">    
+        </PipeEvent>
+
+        <WmiEvent onmatch="include">    
+        </WmiEvent>
+
+        <DnsQuery onmatch="include">    
+        </DnsQuery>
+
+        <FileDelete onmatch="include">    
+        </FileDelete>
+
+        <ClipboardChange onmatch="include">    
+        </ClipboardChange>
+
+        <ProcessTampering onmatch="include">    
+        </ProcessTampering>
+
+        <FileDeleteDetected onmatch="include">    
+        </FileDeleteDetected>
+
+        
+
+        
     </EventFiltering>
+
+
 </Sysmon>
