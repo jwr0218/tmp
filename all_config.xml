@@ -42,23 +42,11 @@
         <WmiEvent onmatch="include">    
         </WmiEvent>
 
-        <DnsQuery onmatch="include">    
-        </DnsQuery>
-
         <FileDelete onmatch="include">    
         </FileDelete>
 
         <ClipboardChange onmatch="include">    
         </ClipboardChange>
-
-        <ProcessTampering onmatch="include">    
-        </ProcessTampering>
-
-        <FileDeleteDetected onmatch="include">    
-        </FileDeleteDetected>
-
-        
-
         
     </EventFiltering>
 
