@@ -1,0 +1,7 @@
+<Sysmon schemaversion="4.0">
+    <EventFiltering>
+        <RegistryEvent onmatch="include">
+            <!-- 모든 레지스트리 이벤트를 포함합니다 -->
+        </RegistryEvent>
+    </EventFiltering>
+</Sysmon>
